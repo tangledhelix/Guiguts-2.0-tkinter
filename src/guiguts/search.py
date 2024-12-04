@@ -623,6 +623,23 @@ class SearchDialog(ToplevelDialog):
         self.message["text"] = message
 
 
+# TODO: if this is brought back later, reminder that the regex handling is not
+#       working properly. See the code under Find All in the Search panel for
+#       hints as to how to do it right. Or, just use the Find All code to do
+#       the work. I imagine instead of putting the data into a CheckerDialog,
+#       it could go to a highlighter instead.
+#
+# TODO: if this is brought back later, possibly it should not be a panel.
+#       * restore selection is already available in the menus
+#       * select all is already available in the menus
+#       * remove highlights is already available in the menus
+#       * find based on match_case / regex settings available in Search panel
+#       * Find All does the same as this, except in a CheckerDialog, not
+#         inline highlight
+#       * alternate implementation: add Highlight All to Search panel, which
+#         would do the same highlight we do now, but without implementing
+#         a new dialog class at all, only adding one button to Search.
+#       * another alternate: no implementation and direct users to Find All
 class HighlightDialog(ToplevelDialog):
     """A Toplevel dialog that allows the user to apply highlights based
     on a search string or regex."""
